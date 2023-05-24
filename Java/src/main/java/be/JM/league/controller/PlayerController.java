@@ -4,12 +4,11 @@ import be.JM.league.model.DTO.PlayerDTO;
 import be.JM.league.model.form.PlayerForm;
 import be.JM.league.service.PlayerService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/player")
+@CrossOrigin("*")
 public class PlayerController {
 
     private final PlayerService playerService;

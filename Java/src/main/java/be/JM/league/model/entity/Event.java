@@ -3,13 +3,13 @@ package be.JM.league.model.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.TreeMap;
 
 @Entity
+@Table(name = "\"event\"")
 @Getter @Setter
 public class Event {
 
@@ -21,7 +21,7 @@ public class Event {
     private String name;
 
     private LocalDate beginning;
-    private LocalDate end;
+    private LocalDate ending;
 
     @ManyToMany
     @JoinTable(
@@ -29,7 +29,6 @@ public class Event {
             joinColumns = @JoinColumn(name = "event_id"),
             inverseJoinColumns = @JoinColumn(name = "team_id")
     )
-//    private TreeMap<Team,Double> ranking = new TreeMap<>();
     private Set<Team> teams = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "event")

@@ -1,9 +1,10 @@
 package be.JM.league.model.entity;
 
+import be.JM.league.model.form.TeamForm;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -24,16 +25,14 @@ public class Game {
     private int homeScore;
     private int extScore;
 
-//    @ManyToMany
-//    @JoinTable(
-//            name = "game_team",
-//            joinColumns = @JoinColumn(name = "game_id"),
-//            inverseJoinColumns = {
-//                    @JoinColumn(table= "Team",name = "home_team"),
-//                    @JoinColumn(table = "Team", name = "ext_team")
-//            }
-//    )
-//    private ArrayList<Team> teams = new ArrayList<>(2);
+    @ManyToOne
+    @JoinColumn(name = "home_team_id")
+    private Team home_team;
+
+    @ManyToOne
+    @JoinColumn(name = "ext_team_id")
+    private Team ext_team;
+
 
     @ManyToOne
     @JoinColumn(name = "games")
@@ -41,5 +40,9 @@ public class Game {
 
     @OneToMany(mappedBy = "game")
     private Set<Ticket> tickets;
+
+    /*
+    *
+    * */
 
 }

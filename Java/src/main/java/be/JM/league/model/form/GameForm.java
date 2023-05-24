@@ -18,9 +18,8 @@ public class GameForm {
         Game g = new Game();
 
         g.setStart(start);
-        ArrayList<Team> teams = new ArrayList<>(2);
-        teams.add(0,home);teams.add(1,ext);
-        g.setTeams(teams);
+        g.setExt_team(ext);
+        g.setHome_team(home);
 
         return g;
     }

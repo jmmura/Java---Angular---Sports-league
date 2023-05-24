@@ -16,7 +16,7 @@ public class EventDTO {
 
     private String name;
     private LocalDate beginning;
-    private LocalDate end;
+    private LocalDate ending;
 
     private Set<String> teams;
 
@@ -26,7 +26,7 @@ public class EventDTO {
             return EventDTO.builder()
                     .name(e.getName())
                     .beginning(e.getBeginning())
-                    .end(e.getEnd())
+                    .ending(e.getEnding())
                     .teams(e.getTeams().stream().map(Team::getName).collect(Collectors.toSet()))
                     .build();
         }

@@ -1,10 +1,10 @@
 package be.JM.league.model.entity;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 
-import javax.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -28,8 +28,11 @@ public class Team {
     @OneToMany(mappedBy = "team")
     private Set<Player> players = new LinkedHashSet<>();
 
-//    @ManyToMany(mappedBy = "teams")
-//    private Set<Game> games = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "home_team")
+    private Set<Game> home_games = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "ext_team")
+    private Set<Game> ext_games = new LinkedHashSet<>();
 
     @ManyToMany(mappedBy = "teams")
     private Set<Event> competitions;

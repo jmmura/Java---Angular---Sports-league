@@ -3,7 +3,7 @@ package be.JM.league.model.form;
 import be.JM.league.model.entity.Event;
 import lombok.Data;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ public class EventForm {
         Event e = new Event();
 
         e.setBeginning(beginning);
-        e.setEnd(ending);
+        e.setEnding(ending);
         e.setName(name);
 
         return e;

@@ -14,6 +14,8 @@ public interface TeamService {
 
     List<PlayerDTO> getPlayers(Long id);
 
+    List<TeamDTO> getAll();
+
 
 
 

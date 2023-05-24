@@ -21,5 +21,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .orElseThrow( () -> new UsernameNotFoundException("username not found"));
     }
 
+    /*
+    * @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return loadUserByUsername(username);
+    }
+    * */
+
 
 }

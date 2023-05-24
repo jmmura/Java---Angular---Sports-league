@@ -1,4 +1,4 @@
-package be.JM.league.model.DTO;
+package be.JM.league.jwt;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +10,4 @@ import lombok.NoArgsConstructor;
 public class JWTHolderDTO {
 
     String token;
-//    String role;
-
 }

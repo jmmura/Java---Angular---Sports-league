@@ -29,11 +29,11 @@ public class GameDTO {
             return GameDTO.builder()
                     .date(g.getStart().toLocalDate())
                     .start(g.getStart().toLocalTime())
-                    .homeTeam(g.getTeams().get(0).getName())
-                    .extTeam(g.getTeams().get(1).getName())
+                    .homeTeam(g.getHome_team().getName())
+                    .extTeam(g.getExt_team().getName())
                     .homeScore(g.getHomeScore())
                     .extScore(g.getExtScore())
-                    .place(g.getTeams().get(0).getCity())
+                    .place(g.getHome_team().getCity())
                     .build();
         }
     }

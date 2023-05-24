@@ -2,7 +2,7 @@ package be.JM.league.model.form;
 
 import be.JM.league.model.entity.Team;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 public class TeamForm {
 

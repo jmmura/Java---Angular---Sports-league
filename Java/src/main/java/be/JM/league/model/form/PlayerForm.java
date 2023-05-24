@@ -5,10 +5,10 @@ import be.JM.league.model.entity.Team;
 import lombok.Data;
 import lombok.NonNull;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotNull;
 
 @Data
 public class PlayerForm {

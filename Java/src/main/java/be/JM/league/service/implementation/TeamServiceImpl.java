@@ -41,4 +41,9 @@ public class TeamServiceImpl implements TeamService {
         Team t = _teamRepository.findById(id).orElseThrow();
         return t.getPlayers().stream().map(PlayerDTO::makeDTO).collect(Collectors.toList());
     }
+
+    @Override
+    public List<TeamDTO> getAll(){
+        return _teamRepository.findAll().stream().map(TeamDTO::makeDTO).collect(Collectors.toList());
+    }
 }
