@@ -38,26 +38,37 @@ public class Datainit implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         League footFR = new League();
         footFR.setName("foot FR");
+        leagueRepository.save(footFR);
 
         Player p1 = new Player();
         p1.setFirstName("angel");p1.setLastName("di maria");
+        playerRepository.save(p1);
         Player p2 = new Player();
         p2.setFirstName("Frank");p2.setLastName("Ribery");
+        playerRepository.save(p2);
 
 
         Team psg = new Team();
         psg.setName("PSG");
         psg.setCity("Paris");
+        teamRepository.save(psg);
         psg.getPlayers().add(p1);
         Team om = new Team();
         om.setName("OM");
+        teamRepository.save(om);
         p2.setTeam(om);
+        playerRepository.save(p2);
+        teamRepository.save(psg);
+        teamRepository.save(om);
 
         Game g1 = new Game();
+        gamesRepository.save(g1);
         g1.setHome_team(psg);g1.setExt_team(om);
 
 
+
         Event e = new Event();
+        eventRepository.save(e);
         e.setName("Ligue 1");
         e.setBeginning(LocalDate.now());
         e.setEnding(LocalDate.of(2023,8,1));
@@ -65,16 +76,20 @@ public class Datainit implements InitializingBean {
         e.getTeams().add(psg);
         e.getTeams().add(om);
 
-        g1.setEvent(e);
+        e.getGames().add(g1);
+
+
+//        g1.setEvent(e);
         g1.setStart(LocalDateTime.of(2023,6,1,9,0));
 
         gamesRepository.save(g1);
-        playerRepository.save(p1);
-        playerRepository.save(p2);
-        leagueRepository.save(footFR);
-        eventRepository.save(e);
-        teamRepository.save(psg);
-        teamRepository.save(om);
+//        playerRepository.save(p1);
+//        playerRepository.save(p2);
+//        leagueRepository.save(footFR);
+//        eventRepository.save(e);
+//        teamRepository.save(psg);
+//        teamRepository.save(om);
+
 
 
 
