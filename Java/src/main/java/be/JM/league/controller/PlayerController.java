@@ -5,6 +5,8 @@ import be.JM.league.model.form.PlayerForm;
 import be.JM.league.service.PlayerService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/player")
 @CrossOrigin("*")
@@ -24,6 +26,11 @@ public class PlayerController {
     @GetMapping("/{id}")
     public PlayerDTO getOne(@PathVariable Long id){
         return playerService.getOne(id);
+    }
+
+    @GetMapping("/all")
+    public List<PlayerDTO> getAll(){
+        return playerService.getAll();
     }
 
 }

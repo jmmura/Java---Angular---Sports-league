@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/team")
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class TeamController {
 
     private final TeamService teamService;

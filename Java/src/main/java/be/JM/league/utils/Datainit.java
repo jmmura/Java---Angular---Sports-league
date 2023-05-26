@@ -52,6 +52,10 @@ public class Datainit implements InitializingBean {
         t.setCity("Paris");
         t.setName("PSG");
         teamRepository.save(t);
+        t=new Team();
+        t.setCity("Marseille");
+        t.setName("OM");
+        teamRepository.save(t);
 
         Player p = new Player();
         p.setFirstName("Angel");

@@ -15,4 +15,8 @@ export class PlayerServiceService {
   getOne(id : number){
     return this._httpClient.get<player>("http://localhost:8081/player/"+id);
   }
+
+  getAll(){
+    return this._httpClient.get<player>("http://localhost:8081/player/all");
+  }
 }

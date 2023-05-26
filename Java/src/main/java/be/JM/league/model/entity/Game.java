@@ -6,9 +6,6 @@ import lombok.Setter;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -36,7 +33,7 @@ public class Game {
 
     @ManyToOne
     @JoinColumn(name = "games")
-    private Event event = new Event();
+    private Event event;
 
     @OneToMany(mappedBy = "game")
     private Set<Ticket> tickets;
