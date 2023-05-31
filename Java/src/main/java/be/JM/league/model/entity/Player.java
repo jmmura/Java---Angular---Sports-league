@@ -25,6 +25,8 @@ public class Player {
 
     private String picture;
 
+    private int number;
+
     @OneToMany(mappedBy = "player")
     private Set<Award> awards = new LinkedHashSet<>();
 

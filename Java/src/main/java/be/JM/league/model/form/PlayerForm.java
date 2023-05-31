@@ -21,6 +21,8 @@ public class PlayerForm {
 
     private String picture;
 
+    private int number;
+
     public Player toEntity(){
 
         Player p = new Player();
@@ -28,6 +30,7 @@ public class PlayerForm {
         p.setFirstName(firstName);
         p.setLastName(lastName);
         p.setPicture(picture);
+        p.setNumber(number);
 
         return p;
     }

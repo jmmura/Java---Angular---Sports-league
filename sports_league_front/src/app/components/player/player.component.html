@@ -1,1 +1,24 @@
 <p>player works!</p>
+
+<div class="create_player">
+  <form [formGroup]="createForm" (ngSubmit)="submit()">
+
+    <label>First name</label>&nbsp;
+    <input type="text" formControlName="firstName">
+    <br>
+
+    <label>Last name</label>&nbsp;
+    <input type="text" formControlName="lastName">
+    <br>
+
+    <label>Number</label>&nbsp;
+    <input type="number" formControlName="number">
+    <br>
+
+    <label>Picture</label>
+    <input type="file" formControlName="picture">
+    <br>
+
+    <button [disabled]="!createForm.valid">Add</button>
+  </form>
+</div>
