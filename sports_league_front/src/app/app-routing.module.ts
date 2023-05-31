@@ -5,9 +5,9 @@ import { PlayerComponent } from './components/player/player.component';
 import { TeamComponent } from './components/team/team.component';
 
 const routes: Routes = [
-  {path : 'event/:id', component : EventComponent},
-  {path : 'player/:id', component : PlayerComponent},
-  {path : 'team/:id', component : TeamComponent},
+  {path : 'event', component : EventComponent},
+  {path : 'player', component : PlayerComponent},
+  {path : 'team', component : TeamComponent},
 
 
 ];

@@ -24,6 +24,7 @@ public class TeamController {
     }
 
     @GetMapping("/all")
+    @CrossOrigin("*")
     List<TeamDTO> getAll(){
         return teamService.getAll();
     }
