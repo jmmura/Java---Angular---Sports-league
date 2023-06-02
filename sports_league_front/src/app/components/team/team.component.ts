@@ -44,7 +44,7 @@ export class TeamComponent implements OnInit{
   })
 
   submit(){
-    this._playerService.create(this.createForm.value)
+    this._teamService.create(this.createForm.value);
   }
 
 }

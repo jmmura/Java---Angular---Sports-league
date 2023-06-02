@@ -13,4 +13,9 @@ export class TeamServiceService {
     return this._httpClient.get<teams>("http://localhost:8081/team/all");
   }
 
+  create(t : team){
+    return this._httpClient.post<team>("https://localhost:8081/team/create",t);
+
+  }
+
 }
