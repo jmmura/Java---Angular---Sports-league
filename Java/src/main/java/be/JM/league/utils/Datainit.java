@@ -23,17 +23,21 @@ public class Datainit implements InitializingBean {
                     TeamRepository teamRepository,
                     EventRepository eventRepository,
                     GamesRepository gamesRepository,
-                    LeagueRepository leagueRepository)
+                    LeagueRepository leagueRepository,
+                    TicketRepository ticketRepository)
     {
         this.playerRepository = playerRepository;
         this.teamRepository = teamRepository;
         this.eventRepository = eventRepository;
         this.gamesRepository = gamesRepository;
         this.leagueRepository = leagueRepository;
+        this.ticketRepository = ticketRepository;
     }
 
     @PersistenceContext
     private EntityManager manager;
+    private final TicketRepository ticketRepository;
+
     @Override
     public void afterPropertiesSet() throws Exception {
 
@@ -68,6 +72,20 @@ public class Datainit implements InitializingBean {
         g.setEvent(e);
         g.setHome_team(t);
         gamesRepository.save(g);
+
+        Ticket tk = new Ticket();
+        tk.setGame(g);
+        tk.setSeat_type(1);
+        tk.setPrice(30);
+        ticketRepository.save(tk);
+        tk=new Ticket();
+        tk.setGame(g);
+        tk.setSeat_type(2);
+        tk.setPrice(50);
+        ticketRepository.save(tk);
+
+
+
 
 
 

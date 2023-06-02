@@ -20,6 +20,8 @@ public class PlayerDTO {
 
     private String team;
 
+    private byte[] picture;
+
     public static PlayerDTO makeDTO(Player p){
         if(p==null){return null;}
         else{
@@ -27,6 +29,7 @@ public class PlayerDTO {
                     .lastName(p.getLastName())
                     .firstName(p.getFirstName())
                     .team(p.getTeam().getName())
+                    .picture(p.getPicture())
                     .build();
         }
     }

@@ -1,6 +1,10 @@
 package be.JM.league.service.implementation;
 
+import be.JM.league.model.DTO.TicketDTO;
+import be.JM.league.model.entity.Ticket;
+import be.JM.league.repository.TicketRepository;
 import be.JM.league.repository.UserRepository;
+import be.JM.league.service.TicketService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -9,10 +13,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private final UserRepository userRepository;
 
-    public UserDetailsServiceImpl(UserRepository userRepository) {
+
+    private final UserRepository userRepository;
+    private final TicketRepository ticketRepository;
+
+    public UserDetailsServiceImpl(UserRepository userRepository,TicketRepository ticketRepository) {
         this.userRepository = userRepository;
+        this.ticketRepository = ticketRepository;
     }
 
     @Override
@@ -27,6 +35,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return loadUserByUsername(username);
     }
     * */
+
+    public TicketDTO buyTicket(Long id){
+        Ticket t = ticketRepository.findById(id).orElseThrow();
+
+    }
 
 
 }

@@ -10,6 +10,7 @@ public class TeamDTO {
 
     private String name;
     private String city;
+    private byte[] logo;
 
     public static TeamDTO makeDTO(Team t){
         if(t==null){return null;}
@@ -17,6 +18,7 @@ public class TeamDTO {
             return TeamDTO.builder()
                     .name(t.getName())
                     .city(t.getCity())
+                    .logo(t.getLogo())
                     .build();
         }
     }

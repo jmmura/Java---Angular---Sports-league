@@ -4,6 +4,8 @@ import be.JM.league.model.entity.Team;
 
 import jakarta.validation.constraints.NotNull;
 
+import java.io.File;
+
 public class TeamForm {
 
     @NotNull
@@ -14,7 +16,7 @@ public class TeamForm {
 
     private String coach;
 
-    private String logo;
+    private File logo;
 
     public Team toEntity(){
         Team t = new Team();

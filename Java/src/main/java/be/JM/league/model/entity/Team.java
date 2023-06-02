@@ -21,7 +21,7 @@ public class Team {
 
     private String coach;
 
-    private String logo = null;
+    private byte[] logo = null;
 
     private String city;
 

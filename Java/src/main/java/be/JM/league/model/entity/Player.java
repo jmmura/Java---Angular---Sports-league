@@ -23,7 +23,7 @@ public class Player {
     @Column(name = "first_name")
     private String firstName;
 
-    private String picture;
+    private byte[] picture;
 
     private int number;
 
